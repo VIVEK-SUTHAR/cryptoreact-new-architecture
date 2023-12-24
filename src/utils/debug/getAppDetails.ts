@@ -4,6 +4,7 @@ type AppDetails = {
   isNewArchitectureEnabled: string;
   appBundleLoadTime: string;
   jsDevMode: string;
+  isBridgeLess: string;
 };
 
 export default function getAppDetails(): AppDetails {
@@ -17,11 +18,16 @@ export default function getAppDetails(): AppDetails {
 
   const appBundleLoadTime = String(__BUNDLE_START_TIME__);
   const jsDevMode = String(__DEV__);
+  
+  const isBridgeLess= String(global?.RN$Bridgeless === true);
+  
+  
   return {
     isHermesEnabled,
     uiManager,
     isNewArchitectureEnabled,
     appBundleLoadTime,
     jsDevMode,
+    isBridgeLess
   };
 }
