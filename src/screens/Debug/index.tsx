@@ -5,7 +5,9 @@ import packageJSON from "../../../package.json";
 import { Box, Text } from "theme";
 import Constants, { ExecutionEnvironment } from "expo-constants";
 import getAppDetails from "utils/debug/getAppDetails";
-
+function isTurboModuleInteropEnabled() {
+  return global?.RN$TurboInterop === true;
+}
 const renderItem: FC<{ item: { label: string; value: string } }> = ({
   item,
 }) => <Item label={item.label} value={item.value} />;
@@ -36,7 +38,9 @@ const DebugScreen: FC = () => {
           label: "New Architecture Enabled",
           value: getAppDetails().isNewArchitectureEnabled,
         },
+        { label: "Bridge Less Mode", value: getAppDetails().isBridgeLess },
         { label: "JS Dev Mode", value: getAppDetails().jsDevMode },
+        
       ],
     },
     {
