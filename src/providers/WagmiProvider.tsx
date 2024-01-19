@@ -1,6 +1,9 @@
 import React, { PropsWithChildren } from "react";
 import { WagmiConfig } from "wagmi";
-import { goerli, mainnet, polygonMumbai } from "viem/chains";
+import {
+  mainnet, goerli,
+  polygonMumbai
+} from "viem/chains";
 import { APP_NAME, APP_DESC, PROJECT_WEBSITE } from "constants/index";
 import app from "../../app.json";
 import {

@@ -40,10 +40,7 @@ const DebugScreen: FC = () => {
         },
         { label: "Bridge Less Mode", value: getAppDetails().isBridgeLess },
         { label: "JS Dev Mode", value: getAppDetails().jsDevMode },
-        {
-          label: "InterOP ENabled",
-          value: String(isTurboModuleInteropEnabled()),
-        },
+        
       ],
     },
     {
